@@ -5,5 +5,10 @@
 # but you can also edit it by hand.
 
 meteor-platform
-matthew:foundation5-sass
 coffeescript
+rainhaven:sass
+ian:accounts-ui-bootstrap-3
+jameslefrere:accounts-twitch
+reywood:bootstrap3-sass
+accounts-google
+mizzao:user-status

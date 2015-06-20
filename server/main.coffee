@@ -1,1 +1,5 @@
 Meteor.startup ()->
+
+Meteor.publish 'users', () ->
+  Meteor.users.find
+    "status.online":true

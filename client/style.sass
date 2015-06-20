@@ -1,3 +1,13 @@
 /* SASS declarations go here */
-@import "_settings"
-@import "../.meteor/local/build/programs/server/assets/packages/matthew_foundation5-sass/foundation"
+
+@import "_variables"
+@import ".meteor/local/build/programs/server/assets/packages/reywood_bootstrap3-sass/bootstrap"
+
+$twitch-color: #6441A5
+
+.btn-Twitch
+  color: white
+  background-color: $twitch-color
+  &:hover
+    color: white
+    background-color: lighten($twitch-color, 15%)
