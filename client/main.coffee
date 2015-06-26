@@ -4,6 +4,4 @@ Meteor.subscribe 'users'
 
 Template.userList.helpers
   onlineUsers: () ->
-    Meteor.users.find(
-      "status.online" : true
-    )
+    Meteor.users.find()

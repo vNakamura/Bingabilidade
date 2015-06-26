@@ -30,6 +30,7 @@ Se você não sabe como fazer mas ainda quer ajudar, separei alguns links para i
 ## To Do
 * ~~Integração com contas do Twitch e Google~~
 * ~~Lista de participantes online~~
+* Implementar sistema de *Unit Test*
 * Geração aleatória de cartela
 * Sistema de Administração
   * Inserção de novos itens
