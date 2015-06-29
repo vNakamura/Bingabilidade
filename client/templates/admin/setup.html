@@ -1,0 +1,27 @@
+<template name="AdminSetup">
+  <div class="row">
+    <div class="col-md-9">
+      <h1>Setup</h1>
+      <p>
+        O site está instalado e parece estar funcionando corretamente.<br>
+        Só precisamos completar mais alguns passos.
+      </p>
+      <h2>Passo 1: Configurar sistema de login</h2>
+      <p>
+        Utilize o botão abaixo e siga as instruções para configurar o sistema de autenticação:<br>
+        {{> loginButtons}}
+      </p>
+      <p>
+        Repita este passo para cada serviço disponível. Quando estiver tudo certo, faça o login com qualquer um dos serviços configurados para seguir para o próximo passo.
+      </p>
+    </div>
+    <aside class="col-md-3">
+      <section>
+        <h3>Passos</h3>
+      </section>
+      <section>
+        <h3>Instruções</h3>
+      </section>
+    </aside>
+  </div>
+</template>
