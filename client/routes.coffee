@@ -10,4 +10,7 @@ Router.route '/admin', ()->
   @.render 'AdminDashboard'
 
 Router.route '/setup', ()->
+  @.layout 'adminLayout'
   @.render 'AdminSetup'
+
+AccountsTemplates.configureRoute('signIn');
