@@ -7,14 +7,14 @@
 meteor-platform
 coffeescript
 rainhaven:sass
-ian:accounts-ui-bootstrap-3
 jameslefrere:accounts-twitch
-reywood:bootstrap3-sass
 accounts-google
 mizzao:user-status
 iron:router
 ostrio:iron-router-title
 xolvio:cucumber
 sanjo:jasmine
-useraccounts:bootstrap
 softwarerero:accounts-t9n
+mquandalle:bower
+useraccounts:polymer
+differential:vulcanize

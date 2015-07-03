@@ -1,32 +1,15 @@
-<template name="navTop">
-  {{#Layout template="commonNavTop"}}
-    <li><a href="/admin">Admin</a></li>
+<template name="mainMenu">
+  {{#Layout template="commonmainMenu"}}
+    <a href="/admin">Admin</a>
   {{/Layout}}
 </template>
 
-<template name="adminNavTop">
-  {{#Layout template="commonNavTop"}}
+<template name="adminmainMenu">
+  {{#Layout template="commonmainMenu"}}
     {{> atNavButton}}
   {{/Layout}}
 </template>
 
-<template name="commonNavTop">
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Bingabilidade</a>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          {{> yield}}
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </nav>
+<template name="commonmainMenu">
+  {{> yield}}
 </template>
