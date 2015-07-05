@@ -5,25 +5,23 @@
 
 </head>
 
-<body unresolved="true" class="fullbleed layout vertical">
-
+<body>
 </body>
 
 <template name="defaultLayout">
   <paper-drawer-panel>
     <paper-header-panel drawer>
       <paper-toolbar>
-        <div>Application</div>
+        <h1 id="logo">Bingabilidade</h1>
       </paper-toolbar>
-      <div>{{> mainMenu}}</div>
+      {{> mainMenu}}
     </paper-header-panel>
-    <paper-header-panel main>
-      <paper-toolbar>
+    <paper-header-panel main mode="waterfall-tall">
+      <paper-toolbar animate class="tall">
         <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-        <div>Bingabilidade</div>
+        <h2 class="bottom title">{{headerTitle}}</h2>
       </paper-toolbar>
-      <div>
-        <paper-button raised>Teste</paper-button>
+      <div style="height:5000px">
         {{> yield}}
       </div>
     </paper-header-panel>

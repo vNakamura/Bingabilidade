@@ -1,5 +1,3 @@
-Meteor.startup ()->
-
 Meteor.publish 'users', () ->
   Meteor.users.find
     "status.online":true
@@ -15,3 +13,7 @@ unless GlobalSettings.findOne()
 
 Meteor.publish "globalSettings", () ->
   GlobalSettings.find()
+
+Meteor.startup ()->
+  Inject.rawModHtml 'addUnresolved', (html) ->
+    html = html.replace '<body>', '<body unresolved class="fullbleed layout vertical">'

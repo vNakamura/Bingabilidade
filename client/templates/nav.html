@@ -1,15 +1,17 @@
 <template name="mainMenu">
-  {{#Layout template="commonmainMenu"}}
-    <a href="/admin">Admin</a>
-  {{/Layout}}
+  <paper-menu>
+    {{#Layout template="commonMainMenu"}}
+      <paper-item id="toAdmin">Admin</paper-item>
+    {{/Layout}}
+  </paper-menu>
 </template>
 
-<template name="adminmainMenu">
-  {{#Layout template="commonmainMenu"}}
+<template name="adminMainMenu">
+  {{#Layout template="commonMainMenu"}}
     {{> atNavButton}}
   {{/Layout}}
 </template>
 
-<template name="commonmainMenu">
+<template name="commonMainMenu">
   {{> yield}}
 </template>

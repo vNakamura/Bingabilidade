@@ -12,9 +12,10 @@ accounts-google
 mizzao:user-status
 iron:router
 ostrio:iron-router-title
-xolvio:cucumber
 sanjo:jasmine
 softwarerero:accounts-t9n
 mquandalle:bower
 useraccounts:polymer
 differential:vulcanize
+meteorhacks:inject-initial
+reactive-var
