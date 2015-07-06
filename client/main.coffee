@@ -8,19 +8,20 @@ Template.registerHelper 'headerTitle', ()->
   else
     Router.current().route.options.subTitle
 
+
 Template.defaultLayout.events
   "click #logo": ()->
     Router.go '/'
 
-Template.defaultLayout.events
+Template.mainMenu.events
   "click #toAdmin": ()->
     Router.go '/admin'
+  "click #toSignOut": ()->
+    Router.go '/sign-out'
 
 Template.userList.helpers
   onlineUsers: () ->
     Meteor.users.find()
-
-Meteor.subscribe "globalSettings"
 
 Template.AdminSetup.helpers
   adminExists: () ->

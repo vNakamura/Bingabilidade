@@ -2,7 +2,6 @@
 polymerReady = new ReactiveVar false
 
 $(window).on "WebComponentsReady", ->
-  console.log 'ready'
   polymerReady.set true
 
 Meteor.startup ->

@@ -11,18 +11,22 @@ Router.configure
 Router.route '/',
   name: 'home'
   headerTitle: 'Minha Cartela'
+  template: "Home"
   action: ->
-    @render "Home"
-
+    if GlobalSettings.findOne().setupStep < 2
+      @redirect "/setup"
+    else
+      @render "Home"
 
 Router.route '/admin',
   template: 'AdminDashboard'
   subTitle: 'Admin'
   headerTitle: 'Admin'
 
-Router.route '/setup', () ->
-  @.layout 'adminLayout'
-  @.render 'AdminSetup'
+Router.route '/setup',
+  template: 'AdminSetup'
+  subTitle: 'Setup'
+  headerTitle: 'Setup'
 
 Router.route "/sign-out",
   action: ->

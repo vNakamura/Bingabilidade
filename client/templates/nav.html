@@ -2,6 +2,9 @@
   <paper-menu>
     {{#Layout template="commonMainMenu"}}
       <paper-item id="toAdmin">Admin</paper-item>
+      {{#if currentUser}}
+        <paper-item id="toSignOut">Sair</paper-item>
+      {{/if}}
     {{/Layout}}
   </paper-menu>
 </template>

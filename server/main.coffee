@@ -5,13 +5,12 @@ Meteor.publish 'users', () ->
     fields:
       profile: 1
 
-@GlobalSettings = new Mongo.Collection "GlobalSettings"
 unless GlobalSettings.findOne()
   GlobalSettings.insert
     setupStep: 0
     gameRunning: false
 
-Meteor.publish "globalSettings", () ->
+Meteor.publish null, () ->
   GlobalSettings.find()
 
 Meteor.startup ()->
