@@ -16,3 +16,4 @@ Meteor.publish null, () ->
 Meteor.startup ()->
   Inject.rawModHtml 'addUnresolved', (html) ->
     html = html.replace '<body>', '<body unresolved class="fullbleed layout vertical">'
+  Inject.rawBody 'addNoScript', '<noscript>Este site requer javascript.</noscript>'

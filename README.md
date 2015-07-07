@@ -25,12 +25,12 @@ Se você não sabe como fazer mas ainda quer ajudar, separei alguns links para i
 * [Meteor](http://meteor.com)
 * [CoffeeScript](http://coffeescript.org)
 * [SASS](http://sass-lang.com/)
-* [Bootstrap](http://getbootstrap.com)
+* [Polymer](http://polymer-project.org/)
 
 ## To Do
 * ~~Integração com contas do Twitch e Google~~
 * ~~Lista de participantes online~~
-* Implementar sistema de *Unit Test*
+* Implementar sistema de testes automatizados
 * Geração aleatória de cartela
 * Sistema de Administração
   * Inserção de novos itens
@@ -38,6 +38,7 @@ Se você não sabe como fazer mas ainda quer ajudar, separei alguns links para i
 * Como participar
 * Como colaborar
 * Melhorias visuais
+* Aviso para navegadores ~~sem script~~ ou versões incompatíveis 
 
 ## Aviso
 Este site foi desenvolvido para fins de **Zueira**. A participação é gratuita e nenhum prêmio real é dado a eventuais vencedores. Criado por fãs, não há nenhuma ligação direta com *Jogabilida.de* ou *Twitch.tv*.
