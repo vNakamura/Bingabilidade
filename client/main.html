@@ -10,10 +10,8 @@
 
 <template name="defaultLayout">
   <paper-drawer-panel>
-    <paper-header-panel drawer>
-      <paper-toolbar>
-        <h1 id="logo">Bingabilidade</h1>
-      </paper-toolbar>
+    <paper-header-panel drawer class="sideBar">
+      <paper-button id="logo">Bingabilidade</paper-button>
       {{> mainMenu}}
     </paper-header-panel>
     <paper-header-panel main mode="waterfall-tall">
@@ -21,9 +19,9 @@
         <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
         <h2 class="bottom title">{{headerTitle}}</h2>
       </paper-toolbar>
-      <div style="height:5000px">
-        {{> yield}}
-      </div>
+
+      {{> yield}}
+
     </paper-header-panel>
   </paper-drawer-panel>
 </template>

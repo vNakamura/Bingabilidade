@@ -1,12 +1,11 @@
 <template name="mainMenu">
-  <paper-menu>
-    {{#Layout template="commonMainMenu"}}
-      <paper-item id="toAdmin">Admin</paper-item>
-      {{#if currentUser}}
-        <paper-item id="toSignOut">Sair</paper-item>
-      {{/if}}
-    {{/Layout}}
-  </paper-menu>
+  {{#Layout template="commonMainMenu"}}
+    <paper-button id="toWtf">WTF?</paper-button>
+    <paper-button id="toAdmin">Admin</paper-button>
+    {{#if currentUser}}
+      <paper-button id="toSignOut">Sair</paper-button>
+    {{/if}}
+  {{/Layout}}
 </template>
 
 <template name="adminMainMenu">
