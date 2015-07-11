@@ -13,7 +13,7 @@ Router.route '/',
   headerTitle: 'Minha Cartela'
   template: "Home"
   action: ->
-    if GlobalSettings.findOne().setupStep < 2
+    if GlobalSettings.findOne().setupStep < 1
       @redirect "/setup"
     else
       @render "Home"

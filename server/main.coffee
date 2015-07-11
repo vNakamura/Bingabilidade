@@ -5,13 +5,22 @@ Meteor.publish 'users', () ->
     fields:
       profile: 1
 
+Meteor.publish null, () ->
+  GlobalSettings.find()
+
 unless GlobalSettings.findOne()
   GlobalSettings.insert
     setupStep: 0
     gameRunning: false
 
-Meteor.publish null, () ->
-  GlobalSettings.find()
+Meteor.methods
+  'become-admin': ()->
+    unless @userId
+      throw new Meteor.Error "not-logged-in", "Precisa estar logado."
+    Roles.addUsersToRoles @userId, 'admin'
+    GlobalSettings.update {},
+      $set:
+        'setupStep': 1
 
 Meteor.startup ()->
   Inject.rawModHtml 'addUnresolved', (html) ->

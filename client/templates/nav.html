@@ -1,9 +1,11 @@
 <template name="mainMenu">
   {{#Layout template="commonMainMenu"}}
-    <paper-button id="toWtf">WTF?</paper-button>
-    <paper-button id="toAdmin">Admin</paper-button>
+    <paper-button data-action="wtf">WTF?</paper-button>
+    {{#if isInRole 'admin'}}
+      <paper-button data-action="admin">Admin</paper-button>
+    {{/if}}
     {{#if currentUser}}
-      <paper-button id="toSignOut">Sair</paper-button>
+      <paper-button data-action="sign-out">Sair</paper-button>
     {{/if}}
   {{/Layout}}
 </template>

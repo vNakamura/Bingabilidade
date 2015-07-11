@@ -19,3 +19,4 @@ useraccounts:polymer
 differential:vulcanize
 meteorhacks:inject-initial
 reactive-var
+alanning:roles

@@ -8,23 +8,22 @@ Template.registerHelper 'headerTitle', ()->
   else
     Router.current().route.options.subTitle
 
+Template.registerHelper 'GS', ()->
+  GlobalSettings.findOne()
+
+Template.registerHelper '_', ()->
+  _
 
 Template.defaultLayout.events
-  "click #logo": ()->
+  "click [data-action=home]": ()->
     Router.go '/'
 
 Template.mainMenu.events
-  "click #toAdmin": ()->
+  "click [data-action=admin]": ()->
     Router.go '/admin'
-  "click #toSignOut": ()->
+  "click [data-action=sign-out]": ()->
     Router.go '/sign-out'
 
 Template.userList.helpers
   onlineUsers: () ->
     Meteor.users.find()
-
-Template.AdminSetup.helpers
-  adminExists: () ->
-    # console.log @GlobalSettings.find().fetch()
-    # .setupStep == 0
-    true
