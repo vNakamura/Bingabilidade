@@ -1,7 +1,5 @@
 T9n.setLanguage 'pt'
 
-Meteor.subscribe 'users'
-
 Template.registerHelper 'headerTitle', ()->
   if Router.current().route.options.headerTitle
     Router.current().route.options.headerTitle
@@ -17,12 +15,6 @@ Template.registerHelper '_', ()->
 Template.defaultLayout.events
   "click [data-action=home]": ()->
     Router.go '/'
-
-Template.mainMenu.events
-  "click [data-action=admin]": ()->
-    Router.go '/admin'
-  "click [data-action=sign-out]": ()->
-    Router.go '/sign-out'
 
 Template.userList.helpers
   onlineUsers: () ->

@@ -1,5 +1,13 @@
 <template name="mainMenu">
   {{#Layout template="commonMainMenu"}}
+    {{#if currentUser}}
+      <div class="horizontal layout center">
+        {{> avatar user=profileUser shape="circle"}}
+        <div class="flex">
+          {{ profileUser.profile.name }}
+        </div>
+      </div>
+    {{/if}}
     <paper-button data-action="wtf">WTF?</paper-button>
     {{#if isInRole 'admin'}}
       <paper-button data-action="admin">Admin</paper-button>

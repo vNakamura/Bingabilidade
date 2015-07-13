@@ -1,9 +1,11 @@
-Meteor.publish 'users', () ->
-  Meteor.users.find
+Meteor.publish null, ()->
+  Meteor.users.find(
     "status.online":true
   ,
     fields:
       profile: 1
+      "services.google.picture": 1
+  )
 
 Meteor.publish null, () ->
   GlobalSettings.find()
