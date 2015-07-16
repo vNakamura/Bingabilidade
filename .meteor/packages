@@ -21,3 +21,5 @@ meteorhacks:inject-initial
 reactive-var
 alanning:roles
 utilities:avatar
+markdown
+simple:markdown-templating

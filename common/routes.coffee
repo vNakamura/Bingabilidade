@@ -28,6 +28,11 @@ Router.route '/setup',
   subTitle: 'Setup'
   headerTitle: 'Setup'
 
+Router.route '/wtf',
+  template: 'WTF'
+  subTitle: 'WTF?'
+  headerTitle: 'WTF?'
+
 Router.route "/sign-out",
   action: ->
     Meteor.logout ->

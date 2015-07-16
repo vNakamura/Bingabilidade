@@ -42,6 +42,7 @@ less@1.0.14
 livedata@1.0.13
 localstorage@1.0.3
 logging@1.0.7
+markdown@1.0.4
 meteor@1.1.6
 meteor-platform@1.2.2
 meteorhacks:inject-initial@1.0.2
@@ -74,6 +75,8 @@ sanjo:meteor-files-helpers@1.1.0_6
 sanjo:meteor-version@1.0.0
 service-configuration@1.0.4
 session@1.1.0
+simple:highlight.js@1.0.9
+simple:markdown-templating@1.2.7
 softwarerero:accounts-t9n@1.1.2
 spacebars@1.0.6
 spacebars-compiler@1.0.6

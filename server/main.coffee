@@ -5,6 +5,7 @@ Meteor.publish null, ()->
     fields:
       profile: 1
       "services.google.picture": 1
+      "services.twitch.logo": 1
   )
 
 Meteor.publish null, () ->
