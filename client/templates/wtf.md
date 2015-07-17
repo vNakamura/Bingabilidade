@@ -16,7 +16,7 @@ Se você tem alguma sugestão de tema para inserir no bingo ou pensou em uma nov
 ## Sei programar (ou quero aprender)
 
 Puxe uma cadeira!  
-A.k.a. crie um *Fork*, faça suas modificações e envie um *Pull Request*.
+A.k.a. crie um [Fork](https://github.com/vNakamura/Bingabilidade), faça suas modificações e envie um *Pull Request*.
 
 Se você não sabe como fazer mas ainda quer ajudar, separei alguns links para iniciar:
 

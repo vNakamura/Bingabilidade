@@ -25,6 +25,7 @@ Se você não sabe como fazer mas ainda quer ajudar, separei alguns links para i
 * [Meteor](http://meteor.com)
 * [CoffeeScript](http://coffeescript.org)
 * [SASS](http://sass-lang.com/)
+* [Jade](https://github.com/mquandalle/meteor-jade)
 * [Polymer](http://polymer-project.org/)
 
 ## To Do

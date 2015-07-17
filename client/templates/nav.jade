@@ -1,0 +1,18 @@
+template(name="mainMenu")
+  +Layout(template="commonMainMenu")
+    +if currentUser
+      .horizontal.layout.center
+        +avatar(user=profileUser shape="circle")
+        .flex #{profileUser.profile.name}
+    paper-button(data-action="wtf") WTF?
+    +if isInRole 'admin'
+      paper-button(data-action="admin") Admin
+    +if currentUser
+      paper-button(data-action="sign-out") Sair
+
+template(name="adminMainMenu")
+  +Layout(template="commonMainMenu")
+    #{atNavButton}
+
+template(name="commonMainMenu")
+  +yield

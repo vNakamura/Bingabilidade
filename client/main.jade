@@ -1,0 +1,20 @@
+head
+  meta(charset="utf-8")
+  title Bingabilidade
+  meta(name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
+
+template(name="defaultLayout")
+  paper-drawer-panel
+    paper-header-panel.sideBar(drawer)
+      paper-button.logo(data-action="home") Bingabilidade
+      +mainMenu
+    paper-header-panel(mode="waterfall-tall" main)
+      paper-toolbar(class="tall animate")
+        paper-icon-button(icon="menu" paper-drawer-toggle)
+        h2(class="bottom title") #{headerTitle}
+
+      +yield
+
+
+template(name="adminLayout")
+  +yield

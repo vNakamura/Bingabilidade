@@ -1,0 +1,8 @@
+template(name="userList")
+  .panel.panel-default
+    .panel-heading
+      h3.panel-title Usuários
+    .panel-body
+      ul
+        +each onlineUsers
+          li #{profile.name}
