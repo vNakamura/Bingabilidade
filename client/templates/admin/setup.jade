@@ -1,0 +1,28 @@
+template(name="AdminSetup")
+  
+  p O site está instalado e parece estar funcionando corretamente.
+    br
+    | Só precisamos completar mais alguns passos.
+  
+  unless currentUser
+    
+    h3 Passo 1: Configurar sistema de login
+    p Utilize os botões abaixo e siga as instruções para configurar o sistema de autenticação:
+    
+    paper-material.login-box(elevation="1")
+      +atForm
+    
+    p Repita este passo para cada serviço disponível. Quando estiver tudo pronto, faça o login com qualquer um dos serviços configurados para seguir para o próximo passo.
+  
+  else
+    
+    if _.isEqual GS.setupStep 1
+      h3 Tudo certo!
+      p As configurações iniciais já foram realizadas. Você pode navegar normalmente pelo site.
+      paper-button(data-action="home" raised) Página inicial
+    else
+      
+      h3 Passo 2: Definir perfil como administrador
+      p O login funcionou corretamente e um usuário foi criado para você.
+      p Agora vamos torna-lo administrador. Para prosseguir, clique no botão abaixo.
+      paper-button(data-action="become-admin" raised) Tornar Admin

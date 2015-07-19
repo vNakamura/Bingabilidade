@@ -23,6 +23,9 @@ Meteor.methods
       $set:
         'setupStep': 1
 
+# Accounts.config
+#   forbidClientAccountCreation : true
+
 Meteor.startup ()->
   Inject.rawModHtml 'addUnresolved', (html) ->
     html = html.replace '<body>', '<body unresolved class="fullbleed layout vertical">'

@@ -14,7 +14,6 @@ ostrio:iron-router-title
 sanjo:jasmine
 softwarerero:accounts-t9n
 mquandalle:bower
-useraccounts:polymer
 differential:vulcanize
 meteorhacks:inject-initial
 reactive-var
@@ -25,3 +24,4 @@ simple:markdown-templating
 mquandalle:jade
 zimme:active-route
 fourseven:scss
+useraccounts:polymer1

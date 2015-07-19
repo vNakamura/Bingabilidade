@@ -1,16 +1,12 @@
 /* SASS declarations go here */
 
-// @import "_variables"
-// @import ".meteor/local/build/programs/server/assets/packages/reywood_bootstrap3-sass/bootstrap"
-
-// $twitch-color: #6441A5
-//
-// .btn-Twitch, button#at-twitch.at-social-btn
-//   color: white
-//   background-color: $twitch-color
-//   &:hover
-//     color: white
-//     background-color: lighten($twitch-color, 15%)
+$twitch-color: #6441A5
+paper-button#at-twitch.at-social-btn
+  color: white
+  background-color: $twitch-color
+  &:hover
+    color: white
+    background-color: darken($twitch-color, 5%)
 
 $body-font: 'proxima-nova', 'Helvetica Neue', Arial, sans-serif
 $headline-font: $body-font
@@ -80,3 +76,10 @@ p
   .avatar
     display: inline-block
     margin: 4px
+
+.login-box
+  max-width: 480px
+  margin: 0 auto
+  background: $body-background
+  iron-icon.fa
+    vertical-align: top

@@ -1,0 +1,2 @@
+AccountsTemplates.configure
+  forbidClientAccountCreation : true

@@ -89,7 +89,7 @@ ui@1.0.6
 underscore@1.0.3
 url@1.0.4
 useraccounts:core@1.11.1
-useraccounts:polymer@1.11.1
+useraccounts:polymer1@1.11.1
 utilities:avatar@0.7.13
 velocity:chokidar@1.0.3_1
 velocity:core@0.7.0
