@@ -4,7 +4,7 @@ Não tem muito segredo. Ao acessar o site, uma cartela é criada para você. Os 
 
 Os bingos acontecem apenas durante as transmissões ao vivo do Jogabilidade. Então fique ligado no [twitter deles](http://twitter.com/jogabilidade) pra saber quando vai rolar algo.
 
-Se não está óbvio o suficiente, esse bingo não vale nenhum prêmio.
+Se não está óbvio o suficiente, **esse bingo não dá nenhum prêmio real**.
 
 # Quero colaborar
 

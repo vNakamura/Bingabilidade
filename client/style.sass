@@ -12,11 +12,57 @@
 //     color: white
 //     background-color: lighten($twitch-color, 15%)
 
+$body-font: 'proxima-nova', 'Helvetica Neue', Arial, sans-serif
+$headline-font: $body-font
+
+$body-background: #f9f9f9
+$content-background: #ffffff
+$text-color: #505050
+$link-color: #77AADD
+$link-color-visited: #AA88DD
+
+$common-spacing: 20px
+
 body
-  font-family: Roboto, 'Helvetica Neue', Arial, sans-serif
+  font-family: $body-font
+  font-weight: 300
+  color: $text-color
+  box-sizing: border-box
+  background: $body-background
+
+a
+  color: $link-color
+  &:visited
+    color: $link-color-visited
+
+h1, h2, h3
+  font-family: $headline-font
+  font-weight: 300
+h4, h5, h6
+  font-family: $headline-font
+  font-weight: 400
+
+p
+  font-weight: 300
+  strong
+    font-weight: 400
+
+#mainTitle
+  font-family: $headline-font
+  transition: font-size .2s, font-weight .2s
+  font-weight: 300
+  .tall &
+    line-height: 2.5rem
+    font-size: 2.5rem
+
+.main-content
+  background: $content-background
+  padding: $common-spacing
+  margin: $common-spacing auto
+  max-width: 768px
 
 .sideBar
-  background-color: #EEE
+  background-image: linear-gradient(to top, #ccc, #eee)
   paper-button
     margin: 0
     width: 100%
@@ -26,6 +72,7 @@ body
     &[active]
       background-image: linear-gradient( to left, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 70% )
     &.logo
+      font-family: $headline-font
       font-size: 1.5em
       text-align: center
       background-color: #ddd

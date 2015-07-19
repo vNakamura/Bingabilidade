@@ -2,19 +2,26 @@ head
   meta(charset="utf-8")
   title Bingabilidade
   meta(name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
+    
+  //- Typekit Fonts
+  script(src="//use.typekit.net/uwg4kpr.js")
+  script
+    try{Typekit.load();}catch(e){}
 
 template(name="defaultLayout")
-  paper-drawer-panel
+  paper-drawer-panel(responsive-width="768px")
     paper-material.fit(elevation="3" drawer)
       paper-header-panel.sideBar
         paper-button.logo(data-action="home") Bingabilidade
         +mainMenu
+        
     paper-header-panel(mode="waterfall-tall" main)
       paper-toolbar.tall.animate
         paper-icon-button(icon="menu" paper-drawer-toggle)
-        .bottom.title #{headerTitle}
+        #mainTitle.bottom.title #{headerTitle}
 
-      +yield
+      paper-material.main-content(elevation="1")
+        +yield
 
 
 template(name="adminLayout")
