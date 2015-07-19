@@ -16,6 +16,7 @@ deps@1.0.7
 differential:vulcanize@2.0.0
 ejson@1.0.6
 fastclick@1.0.3
+fourseven:scss@3.2.0
 geojson-utils@1.0.3
 google@1.1.5
 html-tools@1.0.4
@@ -63,7 +64,6 @@ ostrio:iron-router-title@0.2.1
 package-version-parser@3.0.3
 practicalmeteor:chai@1.9.2_3
 practicalmeteor:loglevel@1.1.0_3
-rainhaven:sass@1.0.2
 random@1.0.3
 reactive-dict@1.1.0
 reactive-var@1.0.5
@@ -98,3 +98,4 @@ velocity:meteor-stubs@1.1.0
 velocity:shim@0.1.0
 webapp@1.2.0
 webapp-hashing@1.0.3
+zimme:active-route@2.2.0

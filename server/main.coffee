@@ -8,13 +8,11 @@ Meteor.publish null, ()->
       "services.twitch.logo": 1
   )
 
-Meteor.publish null, () ->
+Meteor.publish null, ()->
   GlobalSettings.find()
 
-unless GlobalSettings.findOne()
-  GlobalSettings.insert
-    setupStep: 0
-    gameRunning: false
+Meteor.publish 'numbers', ()->
+  Numbers.find()
 
 Meteor.methods
   'become-admin': ()->

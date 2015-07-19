@@ -5,13 +5,14 @@ head
 
 template(name="defaultLayout")
   paper-drawer-panel
-    paper-header-panel.sideBar(drawer)
-      paper-button.logo(data-action="home") Bingabilidade
-      +mainMenu
+    paper-material.fit(elevation="3" drawer)
+      paper-header-panel.sideBar
+        paper-button.logo(data-action="home") Bingabilidade
+        +mainMenu
     paper-header-panel(mode="waterfall-tall" main)
-      paper-toolbar(class="tall animate")
+      paper-toolbar.tall.animate
         paper-icon-button(icon="menu" paper-drawer-toggle)
-        h2(class="bottom title") #{headerTitle}
+        .bottom.title #{headerTitle}
 
       +yield
 

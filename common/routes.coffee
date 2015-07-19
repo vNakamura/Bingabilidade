@@ -19,9 +19,9 @@ Router.route '/',
       @render "Home"
 
 Router.route '/admin',
-  template: 'AdminDashboard'
-  subTitle: 'Admin'
-  headerTitle: 'Admin'
+  template: 'Numbers'
+  subTitle: 'Números'
+  headerTitle: 'Números'
 
 Router.route '/setup',
   template: 'AdminSetup'

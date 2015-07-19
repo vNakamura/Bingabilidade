@@ -6,7 +6,6 @@
 
 meteor-platform
 coffeescript
-rainhaven:sass
 jameslefrere:accounts-twitch
 accounts-google
 mizzao:user-status
@@ -24,3 +23,5 @@ utilities:avatar
 markdown
 simple:markdown-templating
 mquandalle:jade
+zimme:active-route
+fourseven:scss

@@ -4,9 +4,9 @@ template(name="mainMenu")
       .horizontal.layout.center
         +avatar(user=profileUser shape="circle")
         .flex #{profileUser.profile.name}
-    paper-button(data-action="wtf") WTF?
+    paper-button(data-action="wtf" active="{{isActiveRoute 'wtf'}}") WTF?
     +if isInRole 'admin'
-      paper-button(data-action="admin") Admin
+      paper-button(data-action="admin" active="{{isActiveRoute 'admin'}}") Admin
     +if currentUser
       paper-button(data-action="sign-out") Sair
 
