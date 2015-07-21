@@ -1,6 +1,11 @@
 template(name="Numbers")
   each columns
-    h3 #{letter}
-    ul
+    h1 Coluna #{letter}
+    .number-list
       each numbers
-        li #{number}
+        paper-item
+          div.number #{number}
+          paper-item-body.flex(two-line)
+            div Título
+            div(secondary) Descrição
+          paper-icon-button(icon="create")

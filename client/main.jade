@@ -4,7 +4,8 @@ head
   meta(name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
     
   //- External assets
-  script(src="//use.typekit.net/uwg4kpr.js")
+  script(src="//use.typekit.net/uwg4kpr.js").
+    try{Typekit.load()}catch(e){}
   link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
 
 template(name="defaultLayout")

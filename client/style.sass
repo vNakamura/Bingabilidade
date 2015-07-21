@@ -51,6 +51,20 @@ p
     line-height: 2.5rem
     font-size: 2.5rem
 
+.number-list
+  paper-item
+    margin: 0 (-$common-spacing)
+    padding: ($common-spacing / 2) $common-spacing
+    font-family: $body-font
+    &:hover
+      background-color: $body-background
+  paper-item-body
+   div[secondary]
+     color: transparentize($text-color, .3)
+  .number
+    font-size: 1.3em
+    width: 60px
+
 .main-content
   background: $content-background
   padding: $common-spacing
