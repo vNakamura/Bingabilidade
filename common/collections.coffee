@@ -1,3 +1,4 @@
 @GlobalSettings = new Mongo.Collection "GlobalSettings"
 
-@Numbers = new Mongo.Collection "Numbers"
+@Columns = new Mongo.Collection "columns"
+@Numbers = new Mongo.Collection "numbers"

@@ -11,6 +11,8 @@ Meteor.publish null, ()->
 Meteor.publish null, ()->
   GlobalSettings.find()
 
+Meteor.publish 'columns', ()->
+  Columns.find()
 Meteor.publish 'numbers', ()->
   Numbers.find()
 

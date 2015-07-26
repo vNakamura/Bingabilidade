@@ -1,4 +1,8 @@
+Meteor.subscribe 'columns'
 Meteor.subscribe 'numbers'
+
 Template.Numbers.helpers
   'columns' : ()->
-    Numbers.find()
+    Columns.find()
+  'numbers' : (columnId)->
+    Numbers.find({column_id: columnId})

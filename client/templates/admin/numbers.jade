@@ -2,10 +2,11 @@ template(name="Numbers")
   each columns
     h1 Coluna #{letter}
     .number-list
-      each numbers
+      each numbers _id
         paper-item
+          paper-checkbox
           div.number #{number}
           paper-item-body.flex(two-line)
-            div Título
+            div #{_id}
             div(secondary) Descrição
           paper-icon-button(icon="create")
