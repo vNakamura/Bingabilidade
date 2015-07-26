@@ -16,15 +16,6 @@ Meteor.publish 'columns', ()->
 Meteor.publish 'numbers', ()->
   Numbers.find()
 
-Meteor.methods
-  'become-admin': ()->
-    unless @userId
-      throw new Meteor.Error "not-logged-in", "Precisa estar logado."
-    Roles.addUsersToRoles @userId, 'admin'
-    GlobalSettings.update {},
-      $set:
-        'setupStep': 1
-
 # Accounts.config
 #   forbidClientAccountCreation : true
 

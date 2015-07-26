@@ -4,9 +4,9 @@ template(name="Numbers")
     .number-list
       each numbers _id
         paper-item
-          paper-checkbox
+          paper-checkbox(checked=enabled)
           div.number #{number}
           paper-item-body.flex(two-line)
-            div #{_id}
-            div(secondary) Descrição
+            div {{ifNull title "Sem título"}}
+            div(secondary) {{ifNull description "Sem descrição"}}
           paper-icon-button(icon="create")

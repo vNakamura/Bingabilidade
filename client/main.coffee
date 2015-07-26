@@ -12,6 +12,11 @@ Template.registerHelper 'GS', ()->
 Template.registerHelper '_', ()->
   _
 
+Template.registerHelper 'ifNull', (value, defaultValue)->
+  if value == null || value == undefined
+    return defaultValue
+  value
+
 Template.defaultLayout.events
   "click [data-action=home]": ()->
     Router.go '/'

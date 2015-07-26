@@ -10,6 +10,3 @@ Meteor.startup ->
     if polymerReady.get()
       Router.insert el: "[iron-router]"
       Router.start()
-  # try
-  #   Typekit.load()
-  # catch e
