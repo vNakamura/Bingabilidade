@@ -17,6 +17,8 @@ $text-color: #505050
 $link-color: #77AADD
 $link-color-visited: #AA88DD
 
+$main-brake: 768px
+
 $common-spacing: 20px
 
 body
@@ -66,11 +68,14 @@ p
     width: $common-spacing * 2
     margin-left: $common-spacing
 
+#edit-dialog
+  width: $main-brake
+
 .main-content
   background: $content-background
   padding: $common-spacing
   margin: $common-spacing auto
-  max-width: 768px
+  max-width: $main-brake
 
 .sideBar
   background-image: linear-gradient(to top, #ccc, #eee)

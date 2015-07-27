@@ -21,7 +21,8 @@ template(name="defaultLayout")
         #mainTitle.bottom.title #{headerTitle}
       paper-material.main-content(elevation="1")
         +yield
-
+        
+  +NumberEdit
 
 template(name="adminLayout")
   +yield
