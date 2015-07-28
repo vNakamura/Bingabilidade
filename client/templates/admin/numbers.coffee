@@ -15,8 +15,6 @@ Template.Numbers.events
         event.target.checked = @.enabled
   'click .edit-btn': ()->
     Session.set 'currentNumber', @
-    # $('#number-edit-title').val(@.title)
-    # $('#number-edit-description').val(@.description)
     $('#edit-dialog').get(0).open()
 
 Template.NumberEdit.helpers
