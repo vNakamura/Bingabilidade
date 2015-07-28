@@ -1,17 +1,31 @@
 {{#template name='WTF'}}
-# Como participar
-Não tem muito segredo. Ao acessar o site, uma cartela é criada para você. Os moderadores irão ativar os temas que surgirem no stream. As cartelas dos jogadores vão sendo preenchidas automaticamente.
+# Bingabili o quê?
+Bingabilidade, o bingo do [Jogabilidade](http://jogabilida.de)!  
+É uma brincadeira deles. Sempre que acontece uma coisa recorrente lá, eles dizem: "Marquem no bingo!" (explicando piada ![kappa](http://static-cdn.jtvnw.net/emoticons/v1/25/1.0)).
 
-Os bingos acontecem apenas durante as transmissões ao vivo do Jogabilidade. Então fique ligado no [twitter deles](http://twitter.com/jogabilidade) pra saber quando vai rolar algo.
+Para estudar algumas novas ferramentas, decidi fazer uma versão funcional do bingo.
+
+# Como participar
+Não tem muito segredo. Ao acessar o site, uma cartela é criada para você. Clique nos números na cartela para marcá-los quando aquele assunto surgir.
+
+Os bingos só fazem sentido durante as transmissões ao vivo do Jogabilidade. Então fique ligado no [twitter deles](http://twitter.com/jogabilidade) pra saber quando vai rolar algo.
+
+O site ainda está em fase *beta* (algumas publishers chamariam de *open alpha*). Por isso, é provável que alguns problemas apareçam. Como utilizamos algumas tecnologias recentes, você precisa utilizar um navegador moderno como [Firefox](http://firefox.com) e [Chrome](http://chrome.google.com).
 
 Se não está óbvio o suficiente, **esse bingo não dá nenhum prêmio real**.
 
 # Quero colaborar
 
 ## Tenho idéias
-Se você tem alguma sugestão de tema para inserir no bingo ou pensou em uma nova funcionalidade que poderíamos implementar, utilize o formulário em:
+O site ainda está bem simples e temos pouco conteúdo para poder formar cartelas mais variadas. Então, se você tem alguma sugestão de tema para inserir no bingo ou pensou em uma nova funcionalidade que poderíamos implementar, envie para [@vNaka](http://twitter.com/vNaka)
 
-[Criar formulário do Google e inserir link]
+Algumas melhorias que já planejo implementar:
+
+* Login via Google e Twitch
+* Lista de participantes, podendo ver a cartela deles
+* Moderação para confirmar números válidos
+* Aviso de quando alguém ganhar
+* Melhorias visuais
 
 ## Sei programar (ou quero aprender)
 
