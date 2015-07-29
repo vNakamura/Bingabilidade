@@ -1,7 +1,27 @@
+@ApplicationController = RouteController.extend
+  onBeforeAction: ()->
+    if GlobalSettings.findOne().setupStep < 1
+      @.redirect "/setup"
+    @.next()
+
+@AdminController = RouteController.extend
+  # waitOn: ()->
+  #   [Meteor.subscribe("roles")]
+  onBeforeAction: ()->
+    if Meteor.user()
+      if Roles.userIsInRole(Meteor.user(), 'admin')
+        @next()
+      else
+        @redirect "/"
+    else
+      @redirect "/sign-in"
+
+
 Router.configure
   autoRender: false
   autoStart: false
   layoutTemplate: 'defaultLayout'
+  controller: 'ApplicationController'
   title: () ->
     if Router.current().route.options.subTitle
       "#{Router.current().route.options.subTitle} - Bingabilidade"
@@ -12,13 +32,13 @@ Router.route '/',
   name: 'home'
   headerTitle: 'Minha Cartela'
   template: "Home"
-  action: ->
-    if GlobalSettings.findOne().setupStep < 1
-      @redirect "/setup"
-    else
-      @render "Home"
+
+Router.route '/sign-in',
+  headerTitle: 'Não logado'
+  template: "at-form"
 
 Router.route '/admin',
+  controller: 'AdminController'
   template: 'Numbers'
   subTitle: 'Números'
   headerTitle: 'Números'

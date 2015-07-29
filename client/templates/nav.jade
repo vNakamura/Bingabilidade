@@ -1,14 +1,21 @@
 template(name="mainMenu")
   +Layout(template="commonMainMenu")
-    +if currentUser
-      .horizontal.layout.center
+    .horizontal.layout.center
+      +if currentUser
         +avatar(user=profileUser shape="circle")
         .flex #{profileUser.profile.name}
+      +else
+        .avatar.avatar-circle
+          img.avatar-image(src="/img/no-pic.jpg")
+        .flex Anônimo
+    paper-button(data-action="home" active="{{isActiveRoute 'home'}}") Minha Cartela
     paper-button(data-action="wtf" active="{{isActiveRoute 'wtf'}}") WTF?
     +if isInRole 'admin'
       paper-button(data-action="admin" active="{{isActiveRoute 'admin'}}") Admin
     +if currentUser
       paper-button(data-action="sign-out") Sair
+    +else
+      paper-button(data-action="sign-in" active="{{isActiveRoute 'sign-in'}}") Entrar
 
 template(name="adminMainMenu")
   +Layout(template="commonMainMenu")

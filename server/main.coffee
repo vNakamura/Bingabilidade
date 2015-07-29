@@ -16,6 +16,9 @@ Meteor.publish 'columns', ()->
 Meteor.publish 'numbers', ()->
   Numbers.find()
 
+Meteor.publish "roles", ()->
+  Meteor.roles.find()
+
 # Accounts.config
 #   forbidClientAccountCreation : true
 
