@@ -52,8 +52,8 @@ Router.route '/setup',
 Router.route '/wtf',
   name: 'wtf'
   template: 'WTF'
-  subTitle: 'WTF?'
-  headerTitle: 'WTF?'
+  subTitle: 'Ajuda'
+  headerTitle: 'Ajuda'
 
 Router.route '/me',
   template: 'Me'

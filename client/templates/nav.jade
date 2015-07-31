@@ -8,13 +8,23 @@ template(name="mainMenu")
         .avatar.avatar-circle
           img.avatar-image(src="/img/no-pic.jpg")
         .flex Anônimo
-    paper-button(data-action="home" active="{{isActiveRoute 'home'}}") Minha Cartela
-    paper-button(data-action="wtf" active="{{isActiveRoute 'wtf'}}") WTF?
+    paper-button(data-action="home" active="{{isActiveRoute 'home'}}")
+      i.fa.fa-table
+      | Minha Cartela
+    paper-button(data-action="wtf" active="{{isActiveRoute 'wtf'}}")
+        i.fa.fa-question
+        | Ajuda
     +if isInRole 'admin'
-      paper-button(data-action="admin" active="{{isActiveRoute 'admin'}}") Admin
+      paper-button(data-action="admin" active="{{isActiveRoute 'admin'}}")
+        i.fa.fa-legal
+        | Admin
     +if currentUser
-      paper-button(data-action="me" active="{{isActiveRoute 'me'}}") Opções
-      paper-button(data-action="sign-out") Sair
+      paper-button(data-action="me" active="{{isActiveRoute 'me'}}")
+        i.fa.fa-cog
+        | Opções
+      paper-button(data-action="sign-out")
+        i.fa.fa-sign-out
+        | Sair
     +else
       paper-button(data-action="sign-in" active="{{isActiveRoute 'sign-in'}}") Entrar
 
