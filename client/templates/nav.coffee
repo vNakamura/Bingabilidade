@@ -5,9 +5,5 @@ Template.mainMenu.helpers
     )
 
 Template.mainMenu.events
-  "click [data-action=admin]": ()->
-    Router.go '/admin'
-  "click [data-action=sign-out]": ()->
-    Router.go '/sign-out'
-  "click [data-action=wtf]": ()->
-    Router.go '/wtf'
+  "click [data-action]": (event)->
+    Router.go "/#{$(event.target).data('action')}"

@@ -16,7 +16,6 @@
     else
       @redirect "/sign-in"
 
-
 Router.configure
   autoRender: false
   autoStart: false
@@ -34,6 +33,7 @@ Router.route '/',
   template: "Home"
 
 Router.route '/sign-in',
+  name: 'signIn'
   headerTitle: 'Não logado'
   template: "at-form"
 
@@ -44,16 +44,27 @@ Router.route '/admin',
   headerTitle: 'Números'
 
 Router.route '/setup',
+  name: 'setup'
   template: 'AdminSetup'
   subTitle: 'Setup'
   headerTitle: 'Setup'
 
 Router.route '/wtf',
+  name: 'wtf'
   template: 'WTF'
   subTitle: 'WTF?'
   headerTitle: 'WTF?'
+
+Router.route '/me',
+  template: 'Me'
+  subTitle: 'Opções'
+  headerTitle: 'Opções'
 
 Router.route "/sign-out",
   action: ->
     Meteor.logout ->
       Router.go "/"
+
+
+Router.plugin 'ensureSignedIn',
+    except: ['home', 'signIn', 'wtf', 'setup']

@@ -1,2 +1,4 @@
 AccountsTemplates.configure
-  forbidClientAccountCreation : true
+  hideSignUpLink : true
+  hideSignInLink: true
+  showAddRemoveServices: true

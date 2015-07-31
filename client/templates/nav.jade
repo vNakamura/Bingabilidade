@@ -13,6 +13,7 @@ template(name="mainMenu")
     +if isInRole 'admin'
       paper-button(data-action="admin" active="{{isActiveRoute 'admin'}}") Admin
     +if currentUser
+      paper-button(data-action="me" active="{{isActiveRoute 'me'}}") Opções
       paper-button(data-action="sign-out") Sair
     +else
       paper-button(data-action="sign-in" active="{{isActiveRoute 'sign-in'}}") Entrar

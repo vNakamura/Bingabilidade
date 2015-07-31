@@ -10,7 +10,7 @@ template(name="AdminSetup")
     p Utilize os botões abaixo e siga as instruções para configurar o sistema de autenticação:
     
     paper-material.login-box(elevation="1")
-      +atForm
+      +loginButtons
     
     p Repita este passo para cada serviço disponível. Quando estiver tudo pronto, faça o login com qualquer um dos serviços configurados para seguir para o próximo passo.
   
@@ -26,3 +26,13 @@ template(name="AdminSetup")
       p O login funcionou corretamente e um usuário foi criado para você.
       p Agora vamos torna-lo administrador. Para prosseguir, clique no botão abaixo.
       paper-button(data-action="become-admin" raised) Tornar Admin
+
+template(name="LoginButton")
+  .login-text-and-button
+    .div(class="login-button single-login-button {{#unless configured}}configure-button{{/unless}}"
+         id="login-buttons-{{name}}")
+      .login-image(id="login-buttons-image-{{name}}")
+      if configured
+        paper-button(class="text-besides-image sign-in-text-{{name}}") Sign in with {{capitalizedName}}
+      else
+        paper-button(class="text-besides-image configure-text-{{name}}") Configure {{capitalizedName}} Login
