@@ -34,8 +34,8 @@ A.k.a. crie um [Fork](https://github.com/vNakamura/Bingabilidade), faça suas mo
 
 Se você não sabe como fazer mas ainda quer ajudar, separei alguns links para iniciar:
 
-* Javascript: https://www.javascript.com/
-* Meteor: http://meteortips.com/first-meteor-tutorial/
-* Git: https://try.github.io
+* Javascript: <https://www.javascript.com/>
+* Meteor: <http://meteortips.com/first-meteor-tutorial/>
+* Git: <https://try.github.io>
 
 {{/template}}

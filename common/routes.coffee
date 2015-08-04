@@ -3,10 +3,10 @@
     if GlobalSettings.findOne().setupStep < 1
       @.redirect "/setup"
     @.next()
+  onAfterAction: ()->
+    $($("paper-header-panel[main]")[0].scroller).scrollTop(0)
 
-@AdminController = RouteController.extend
-  # waitOn: ()->
-  #   [Meteor.subscribe("roles")]
+@AdminController = ApplicationController.extend
   onBeforeAction: ()->
     if Meteor.user()
       if Roles.userIsInRole(Meteor.user(), 'admin')

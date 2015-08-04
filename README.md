@@ -31,12 +31,10 @@ Se você não sabe como fazer mas ainda quer ajudar, separei alguns links para i
 ## To Do
 * Implementar sistema de testes automatizados
 * Geração aleatória de cartela
-* Sistema de Administração
-  * Inserção de novos itens
+* Gerenciamento de usuários
 * Aviso aos outros participantes quando alguém completar o bingo
-* Como participar
-* Como colaborar
 * Melhorias visuais
 
-## Aviso
-Este site foi desenvolvido para fins de **Zueira**. A participação é gratuita e nenhum prêmio real é dado a eventuais vencedores. Criado por fãs, não há nenhuma ligação direta com *Jogabilida.de* ou *Twitch.tv*.
+## Avisos
+Isto não é um bingo de verdade, mas apenas uma brincadeira. A participação é gratuita e nenhum prêmio real é dado a eventuais vencedores.  
+Criado por fãs, não há nenhuma ligação direta com *Jogabilida.de*, *YouTube* ou *Twitch.tv*.
