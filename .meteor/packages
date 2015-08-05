@@ -21,9 +21,9 @@ markdown
 simple:markdown-templating
 mquandalle:jade
 zimme:active-route
-fourseven:scss
 useraccounts:polymer1
 softwarerero:accounts-t9n
 accounts-ui
 aldeed:template-extension
 splendido:accounts-meld
+juliancwirko:s-jeet

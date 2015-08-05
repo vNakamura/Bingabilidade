@@ -21,7 +21,6 @@ deps@1.0.7
 differential:vulcanize@2.0.1
 ejson@1.0.6
 fastclick@1.0.3
-fourseven:scss@3.2.0
 geojson-utils@1.0.3
 google@1.1.5
 html-tools@1.0.4
@@ -44,6 +43,7 @@ jparker:gravatar@0.3.1
 jquery@1.11.3_2
 json@1.0.3
 jsx@0.1.5
+juliancwirko:s-jeet@1.0.0
 launch-screen@1.0.2
 less@1.0.14
 livedata@1.0.13

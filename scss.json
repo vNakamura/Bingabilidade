@@ -1,7 +1,0 @@
-{
-  "useIndex" : true,
-  "enableAutoprefixer": true,
-  "autoprefixerOptions": {
-      "browsers": ["> 5%"]
-  }
-}
