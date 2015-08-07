@@ -4,10 +4,11 @@ unless GlobalSettings.findOne()
     gameRunning: false
 
 unless Columns.findOne()
-  for l in ['b', 'i', 'l', 'i', 'd']
+  for l, i in ['b', 'i', 'l', 'i', 'd']
     do (l)->
       column =
         letter: l
+        order: i
       Columns.insert column
 
 unless Numbers.findOne()
