@@ -21,6 +21,7 @@ Router.configure
   autoStart: false
   layoutTemplate: 'defaultLayout'
   controller: 'ApplicationController'
+  loadingTemplate: 'loading'
   title: () ->
     if Router.current().route.options.subTitle
       "#{Router.current().route.options.subTitle} - Bingabilidade"
@@ -31,6 +32,11 @@ Router.route '/',
   name: 'home'
   headerTitle: 'Minha Cartela'
   template: "Home"
+  subscriptions: ()->
+    [
+      Meteor.subscribe 'columns'
+      Meteor.subscribe 'numbers'
+    ]
 
 Router.route '/sign-in',
   name: 'signIn'
@@ -42,6 +48,11 @@ Router.route '/admin',
   template: 'Numbers'
   subTitle: 'Números'
   headerTitle: 'Números'
+  subscriptions: ->
+    [
+      Meteor.subscribe 'numbers'
+      Meteor.subscribe 'columns'
+    ]
 
 Router.route '/setup',
   name: 'setup'

@@ -19,9 +19,6 @@ Meteor.publish 'numbers', ()->
 Meteor.publish "roles", ()->
   Meteor.roles.find()
 
-# Accounts.config
-#   forbidClientAccountCreation : true
-
 Meteor.startup ()->
   Inject.rawModHtml 'addUnresolved', (html) ->
     html = html.replace '<body>', '<body unresolved class="fullbleed layout vertical">'

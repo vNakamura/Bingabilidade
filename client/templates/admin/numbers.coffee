@@ -1,11 +1,8 @@
-Meteor.subscribe 'columns'
-Meteor.subscribe 'numbers'
-
 Template.Numbers.helpers
-  'columns': ()->
-    Columns.find()
+  'columns': ->
+    Columns.find {}, {sort:{order:1}}
   'numbers': (columnId)->
-    Numbers.find({column_id: columnId}, {sort:{number:1}})
+    Numbers.find {column_id: columnId}, {sort:{number:1}}
 
 Template.Numbers.events
   'change paper-checkbox': (event)->
