@@ -1,3 +1,3 @@
 Template.myCard.helpers
-  'columns': ->
-    Columns.find()
+  'myCard': ->
+    Session.get 'myCard'

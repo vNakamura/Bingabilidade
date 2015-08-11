@@ -32,11 +32,18 @@ Router.route '/',
   name: 'home'
   headerTitle: 'Minha Cartela'
   template: "Home"
-  subscriptions: ()->
+  subscriptions: ->
     [
       Meteor.subscribe 'columns'
       Meteor.subscribe 'numbers'
     ]
+  onAfterAction: ->
+    unless Session.get 'myCard'
+      Meteor.call 'generateCard', (err, data)->
+        if err
+          console.log err
+        else
+          Session.set 'myCard', data
 
 Router.route '/sign-in',
   name: 'signIn'
