@@ -3,81 +3,10 @@ template(name="myCard")
     tr
       each myCard.headers
         th {{this}}
-    tr
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-    tr
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-    tr
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-    tr
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-    tr
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
-      td
-        .title Title
-        .description Description
+    each myCard.rows
+      tr
+        each this
+          td(class=numberClass)
+            each number number_id
+              .title {{title}}
+              .description {{description}}

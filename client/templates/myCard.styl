@@ -5,10 +5,22 @@ table.my-card
   border-collapse: collapse
   th, td
     border: solid 1px lighten(text-color, 75%)
+    width 20%
   th
     font-size: 2rem
     padding: common-spacing 0 0 0
   td
     padding: common-spacing (common-spacing / 2)
+    vertical-align top
+    text-align center
+    &.checkable
+      cursor pointer
+    &.checked, &.centerSquare
+      color body-background
+      background-color text-color
+  .number
+    font-size: 2rem
+  .title
+    padding common-spacing 0
   .description
-    font-size: .8rem
+    font-size: .7rem

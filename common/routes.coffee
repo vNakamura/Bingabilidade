@@ -4,7 +4,8 @@
       @.redirect "/setup"
     @.next()
   onAfterAction: ()->
-    $($("paper-header-panel[main]")[0].scroller).scrollTop(0)
+    m = $("paper-header-panel[main]")
+    $(m[0].scroller).scrollTop(0) if m.length
 
 @AdminController = ApplicationController.extend
   onBeforeAction: ()->
@@ -43,12 +44,12 @@ Router.route '/',
         if err
           console.log err
         else
-          Session.set 'myCard', data
+          Session.setPersistent 'myCard', data
 
 Router.route '/sign-in',
   name: 'signIn'
   headerTitle: 'Não logado'
-  template: "at-form"
+  template: "signIn"
 
 Router.route '/admin',
   controller: 'AdminController'

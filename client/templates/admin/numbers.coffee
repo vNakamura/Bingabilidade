@@ -24,3 +24,4 @@ Template.NumberEdit.events
       if err
         Alert.error err.message
         event.target.checked = @.enabled
+    Session.set "currentNumber", null
