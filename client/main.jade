@@ -22,7 +22,7 @@ template(name="defaultLayout")
       paper-material.main-content(elevation="1")
         +yield
       
-      paper-toast#toast(text="Toasty!")
+  paper-toast#toast(text="Toasty!")
         
   if isInRole 'admin'
     +SquareEdit

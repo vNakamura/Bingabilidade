@@ -20,11 +20,15 @@ Template.SquareEdit.helpers
 
 Template.SquareEdit.events
   'click paper-button[dialog-confirm]': ()->
+    isNew = @._isNew
     @.title = $('#square-edit-title').val()
     @.description = $('#square-edit-description').val()
     if @.validate()
       @.save()
-      showToast 'Novo item adicionado.'
+      if isNew
+        showToast 'Novo item adicionado.'
+      else
+        showToast 'Item atualizado.'
     else
       errors = []
       for key, value of @.getValidationErrors()
