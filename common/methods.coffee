@@ -7,29 +7,16 @@ Meteor.methods
       $set:
         setupStep: 1
 
-  'enableNumber' : (number_id, value)->
-    check number_id, String
-    check value, Boolean
-    loggedInUser = Meteor.user()
-
-    if (!loggedInUser || !Roles.userIsInRole(loggedInUser, 'admin'))
-      throw new Meteor.Error(403, "Access denied")
-    Numbers.update
-      _id: number_id
-    ,
-      $set:
-        enabled: value
-
-  'editNumber' : (number_id, title, description)->
-    check number_id, String
+  'editSquare' : (square_id, title, description)->
+    check square_id, String
     check title, String
     check description, String
     loggedInUser = Meteor.user()
 
     if (!loggedInUser || !Roles.userIsInRole(loggedInUser, 'admin'))
       throw new Meteor.Error(403, "Access denied")
-    Numbers.update
-      _id: number_id
+    Squares.update
+      _id: square_id
     ,
       $set:
         title: title

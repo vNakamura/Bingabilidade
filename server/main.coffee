@@ -15,6 +15,8 @@ Meteor.publish 'columns', ()->
   Columns.find()
 Meteor.publish 'numbers', ()->
   Numbers.find()
+Meteor.publish 'squares', ->
+  Squares.find()
 
 Meteor.publish "roles", ()->
   Meteor.roles.find()

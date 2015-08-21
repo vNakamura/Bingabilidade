@@ -21,8 +21,11 @@ template(name="defaultLayout")
         #mainTitle.bottom.title #{headerTitle}
       paper-material.main-content(elevation="1")
         +yield
+      
+      paper-toast#toast(text="Toasty!")
         
-  +NumberEdit
+  if isInRole 'admin'
+    +SquareEdit
 
 template(name="adminLayout")
   +yield

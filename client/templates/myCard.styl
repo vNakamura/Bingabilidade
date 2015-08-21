@@ -9,6 +9,8 @@ table.my-card
   th
     font-size: 2rem
     padding: common-spacing 0 0 0
+    +mobile()
+      font-size: 1.2rem
   td
     padding: common-spacing (common-spacing / 2)
     vertical-align top
@@ -18,9 +20,19 @@ table.my-card
     &.checked, &.centerSquare
       color body-background
       background-color text-color
+    +below(2)
+      vertical-align middle
+    +mobile()
+      padding (common-spacing / 4) (common-spacing / 8)
   .number
     font-size: 2rem
   .title
     padding common-spacing 0
+    +below(2)
+      font-size: 0.8rem
+    +mobile()
+      font-size: 0.6rem
   .description
     font-size: .7rem
+    +below(2)
+      display: none

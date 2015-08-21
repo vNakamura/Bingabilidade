@@ -53,13 +53,21 @@ Router.route '/sign-in',
 
 Router.route '/admin',
   controller: 'AdminController'
-  template: 'Numbers'
-  subTitle: 'Números'
-  headerTitle: 'Números'
+  template: 'Squares'
+  subTitle: 'Quadrados'
+  headerTitle: 'Quadrados'
   subscriptions: ->
     [
-      Meteor.subscribe 'numbers'
-      Meteor.subscribe 'columns'
+      Meteor.subscribe 'squares'
+    ]
+
+Router.route '/squares',
+  template: 'Squares'
+  subTitle: 'Quadrados'
+  headerTitle: 'Quadrados'
+  subscriptions: ->
+    [
+      Meteor.subscribe 'squares'
     ]
 
 Router.route '/setup',
@@ -86,4 +94,4 @@ Router.route "/sign-out",
 
 
 Router.plugin 'ensureSignedIn',
-    except: ['home', 'signIn', 'wtf', 'setup']
+    except: ['home', 'signIn', 'wtf', 'squares', 'setup']

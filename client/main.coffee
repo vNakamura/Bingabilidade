@@ -24,3 +24,9 @@ Template.defaultLayout.events
 Template.userList.helpers
   onlineUsers: () ->
     Meteor.users.find()
+
+@showToast = (message, duration=3000)->
+  t = $('#toast').get(0)
+  t.text = message
+  t.duration = duration
+  t.show()

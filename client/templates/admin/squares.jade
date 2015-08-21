@@ -1,0 +1,23 @@
+template(name="Squares")
+  .square-list
+    each squares
+      paper-item
+        paper-item-body.flex(two-line)
+          div= title
+          div(secondary)= description
+        if isInRole 'admin'
+          paper-icon-button.edit-btn(icon="create")
+          paper-icon-button.remove-btn(icon="remove-circle")
+    if isInRole 'admin'
+      paper-fab(icon="add")
+
+
+template(name="SquareEdit")
+  paper-dialog(modal)#edit-dialog
+    +with selected
+      h2 Editar Quadrado
+      paper-input#square-edit-title(label="Título" value=title)
+      paper-input#square-edit-description(label="Descrição" value=description)
+      .buttons
+        paper-button(dialog-dismiss) Cancelar
+        paper-button(dialog-confirm) OK

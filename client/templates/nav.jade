@@ -11,6 +11,9 @@ template(name="mainMenu")
     paper-button(data-action="home" active="{{isActiveRoute 'home'}}")
       i.fa.fa-table
       | Minha Cartela
+    paper-button(data-action="squares" active="{{isActiveRoute 'squares'}}")
+        i.fa.fa-th-large
+        | Quadrados
     paper-button(data-action="wtf" active="{{isActiveRoute 'wtf'}}")
         i.fa.fa-question
         | Ajuda
@@ -26,7 +29,9 @@ template(name="mainMenu")
         i.fa.fa-sign-out
         | Sair
     +else
-      paper-button(data-action="sign-in" active="{{isActiveRoute 'sign-in'}}") Entrar
+      paper-button(data-action="sign-in" active="{{isActiveRoute 'sign-in'}}")
+        i.fa.fa-sign-in
+        | Entrar
 
 template(name="adminMainMenu")
   +Layout(template="commonMainMenu")
