@@ -7,4 +7,4 @@ Template.mainMenu.helpers
 Template.mainMenu.events
   "click [data-action]": (event)->
     $("paper-drawer-panel")[0].closeDrawer()
-    Router.go "/#{$(event.target).data('action')}"
+    Router.go "/#{$(event.currentTarget).data('action')}"

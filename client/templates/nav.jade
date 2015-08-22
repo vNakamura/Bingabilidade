@@ -21,6 +21,13 @@ template(name="mainMenu")
       paper-button(data-action="admin" active="{{isActiveRoute 'admin'}}")
         i.fa.fa-legal
         | Admin
+      .subNav
+        paper-button(data-action="admin/rounds" active="{{isActiveRoute 'admin-rounds'}}")
+          i.fa.fa-trophy
+          | Rodadas
+        paper-button(data-action="admin/users" active="{{isActiveRoute 'admin-users'}}" disabled)
+          i.fa.fa-users
+          | Usuários
     +if currentUser
       paper-button(data-action="me" active="{{isActiveRoute 'me'}}")
         i.fa.fa-cog

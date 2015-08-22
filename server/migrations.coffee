@@ -18,4 +18,23 @@ Migrations.add
   down: ->
     Numbers.remove {}
 
+Migrations.add
+  # Adiciona campos de softremove à collection Squares
+  version: 2
+  up: ->
+    Squares.update {},
+      $set:
+        removed: no
+        removedAt: null
+    ,
+      multi: yes
+
+  down: ->
+    Squares.update {},
+      $unset:
+        removed: ""
+        removedAt: ""
+    ,
+      multi: yes
+
 Migrations.migrateTo 'latest'

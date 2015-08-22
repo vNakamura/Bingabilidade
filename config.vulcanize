@@ -17,6 +17,7 @@
         "bower_components/paper-dialog/paper-dialog.html",
         "bower_components/paper-fab/paper-fab.html",
         "bower_components/paper-toast/paper-toast.html",
+        "bower_components/paper-card/paper-card.html",
         "app-theme.html"
       ]
     }
