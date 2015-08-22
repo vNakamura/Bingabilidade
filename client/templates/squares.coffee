@@ -1,6 +1,6 @@
 Template.Squares.helpers
   'squares': ->
-    Squares.find {}, {sort:{createdAt:-1}}
+    Squares.find {removed:no}, {sort:{createdAt:-1}}
 
 Template.Squares.events
   'click .edit-btn': ()->
@@ -11,7 +11,7 @@ Template.Squares.events
     $('#edit-dialog').get(0).open()
   'click .remove-btn': ()->
     if window.confirm "Excluir o item \"#{@.title}\"?"
-      @.remove()
+      @.softRemove()
       showToast 'Item removido.'
 
 Template.SquareEdit.helpers
