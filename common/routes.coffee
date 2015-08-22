@@ -56,12 +56,8 @@ Router.route '/admin',
   template: 'AdminDashboard'
   subTitle: 'Admin'
   headerTitle: 'Admin'
-  subscriptions: ->
-    [
-      Meteor.subscribe 'squares'
-    ]
 
-Router.route '/admin/rounds',
+Router.route '/rounds',
   name: "admin-rounds"
   controller: 'AdminController'
   template: 'AdminRounds'

@@ -17,9 +17,8 @@ Meteor.publish 'numbers', ()->
   Numbers.find()
 Meteor.publish 'squares', ->
   Squares.find()
-
-Meteor.publish "roles", ()->
-  Meteor.roles.find()
+Meteor.publish 'rounds', ->
+  Rounds.find()
 
 Meteor.startup ()->
   Inject.rawModHtml 'addUnresolved', (html) ->

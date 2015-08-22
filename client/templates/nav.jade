@@ -22,10 +22,10 @@ template(name="mainMenu")
         i.fa.fa-legal
         | Admin
       .subNav
-        paper-button(data-action="admin/rounds" active="{{isActiveRoute 'admin-rounds'}}")
+        paper-button(data-action="rounds" active="{{isActiveRoute 'admin-rounds'}}")
           i.fa.fa-trophy
           | Rodadas
-        paper-button(data-action="admin/users" active="{{isActiveRoute 'admin-users'}}" disabled)
+        paper-button(data-action="users" active="{{isActiveRoute 'admin-users'}}" disabled)
           i.fa.fa-users
           | Usuários
     +if currentUser

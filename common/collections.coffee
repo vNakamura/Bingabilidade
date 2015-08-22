@@ -1,3 +1,7 @@
+rules =
+  adminOnly: (user_id, context)->
+    Roles.userIsInRole(user_id, 'admin')
+
 @GlobalSettings = new Mongo.Collection "GlobalSettings"
 
 @User = Astro.Class
@@ -23,10 +27,6 @@
     title: Validators.required()
     description: Validators.required()
 
-rules =
-  adminOnly: (user_id, context)->
-    Roles.userIsInRole(user_id, 'admin')
-
 Squares.allow
   insert: rules.adminOnly
   update: rules.adminOnly
@@ -44,6 +44,9 @@ Squares.allow
       default: false
   validators:
     name: Validators.required()
+
+Rounds.allow
+  update: rules.adminOnly
 
 @Cards = new Mongo.Collection 'cards'
 @Card = Astro.Class

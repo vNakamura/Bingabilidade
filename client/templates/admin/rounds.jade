@@ -1,10 +1,25 @@
 template(name="AdminRounds")
   
-  h1 Nova rodada
-  form
-    paper-input#round-new-name(label="Nome")
-  
   if currentRound
     h1 Rodada atual
+    +with currentRound
+      .layout.horizontal.end
+        .flex
+          p
+            strong=name
+            | (iniciada {{livestamp createdAt}})
+        div
+          paper-button#currentRoundEnd Encerrar
+  
+  h1 Nova rodada
+  .layout.horizontal.end
+    .flex
+      paper-input#newRoundName(label="Nome")
+    div
+      paper-button#newRoundStart Iniciar
     
   h1 Histórico
+  each roundHistory
+    p
+      strong= name
+      | (encerrada {{livestamp updatedAt}})
