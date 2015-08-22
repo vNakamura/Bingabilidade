@@ -1,6 +1,6 @@
 {
   "name": "Bingabilidade",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "authors": [
     "Vinicius Nakamura <hello@vnakamura.com>"
   ],
@@ -14,7 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "~1.0.5",
-    "paper-elements": "PolymerElements/paper-elements#~1.0.1"
+    "polymer": "Polymer/polymer#^1.0.0",
+    "paper-elements": "PolymerElements/paper-elements#^1.0.0"
   }
 }
