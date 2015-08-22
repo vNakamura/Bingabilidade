@@ -21,7 +21,6 @@ O site ainda está bem simples e temos pouco conteúdo para poder formar cartela
 
 Algumas melhorias que já planejo implementar:
 
-* Login via Google e Twitch
 * Lista de participantes, podendo ver a cartela deles
 * Moderação para confirmar números válidos
 * Aviso de quando alguém ganhar
@@ -30,7 +29,7 @@ Algumas melhorias que já planejo implementar:
 ## Sei programar (ou quero aprender)
 
 Puxe uma cadeira!  
-A.k.a. crie um [Fork](https://github.com/vNakamura/Bingabilidade), faça suas modificações e envie um *Pull Request*.
+Este projeto é *open source* e toda ajuda é bem vinda. Acesse o repositório em <https://github.com/vNakamura/Bingabilidade>, crie um *Fork*, faça suas modificações e envie um *Pull Request*.
 
 Se você não sabe como fazer mas ainda quer ajudar, separei alguns links para iniciar:
 
