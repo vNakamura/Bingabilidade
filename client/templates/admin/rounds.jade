@@ -12,11 +12,14 @@ template(name="AdminRounds")
           paper-button#currentRoundEnd Encerrar
   
   h1 Nova rodada
-  .layout.horizontal.end
-    .flex
-      paper-input#newRoundName(label="Nome")
-    div
-      paper-button#newRoundStart Iniciar
+  if canStart
+    .layout.horizontal.end
+      .flex
+        paper-input#newRoundName(label="Nome")
+      div
+        paper-button#newRoundStart Iniciar
+  else
+    p Não há quadrados suficiente para formar cartelas.
     
   h1 Histórico
   each roundHistory

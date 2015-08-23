@@ -11,6 +11,8 @@ Template.AdminRounds.helpers
     ,
       sort:
         createdAt: -1
+  'canStart': ->
+    Counts.get('squaresTotal') >= 24
 
 Template.AdminRounds.events
   'keyup paper-input, click #newRoundStart': (event)->

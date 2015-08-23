@@ -18,6 +18,10 @@ Meteor.publish 'numbers', ()->
 Meteor.publish 'squares', ->
   Squares.find()
 Meteor.publish 'rounds', ->
+  Counts.publish @,
+  'squaresTotal',
+  Squares.find({removed:no}),
+    noReady: true
   Rounds.find()
 
 Meteor.startup ()->
