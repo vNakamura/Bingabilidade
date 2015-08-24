@@ -12,36 +12,36 @@ shuffle = (arr, required=arr.length) ->
   # returns only the slice that we shuffled
   arr[arr.length - required ..]
 
+@generateNewCard = (round_id)->
+
+  return card
+
+
 Meteor.methods
-  "generateCard": ->
-    card =
-      headers: []
-      rows: []
-    columns = Columns.find({}, {sort:{order:1}}).fetch()
-    numbersVertical = []
-    for c, i in columns
-      card.headers.push c.letter
-      columnNumbers = Numbers.find
-        column_id: c._id
-        enabled: true
-      ,
-        _id:1
-      .fetch()
-      if columnNumbers
-        if i is 2
-          temp = shuffle columnNumbers, 4
-          temp.splice 2, 0, {_id:null}
-          numbersVertical.push temp
-        else
-          numbersVertical.push shuffle(columnNumbers, 5)
+  "generateCard": (round_id, callback)->
+    check round_id, String
 
-    for i in [0..4]
-      row = []
-      for n in numbersVertical
-        obj =
-          number_id: n[i]._id
-          checked: false
-        row.push obj
-      card.rows.push row
+    card = new Card()
+    card._id = ShortId.generate()
+    card.round_id = round_id
+    allSquares = Squares.find
+      removed: no
+    ,
+      fields:
+        _id: yes
+      transform: (square)->
+        square.checked = no
+        square
+    shuffledSquares = shuffle allSquares.fetch(), 24
+    shuffledSquares.splice 12, 0,
+      _id: null
+      checked: yes
+    card.square_ids = shuffledSquares
 
-    card
+    if Meteor.user()
+      card.owner_id = Meteor.userId()
+      card.save()
+      return null
+    else
+      card.save()
+      return card._id

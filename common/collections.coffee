@@ -1,5 +1,5 @@
 rules =
-  adminOnly: (user_id, context)->
+  adminOnly: (user_id)->
     Roles.userIsInRole(user_id, 'admin')
 
 @GlobalSettings = new Mongo.Collection "GlobalSettings"
@@ -12,9 +12,6 @@ rules =
     profile: 'object'
     roles: 'array'
 
-@Columns = new Mongo.Collection "columns"
-@Numbers = new Mongo.Collection "numbers"
-
 @Squares = new Mongo.Collection "squares"
 @Square = Astro.Class
   name: "Square"
@@ -26,7 +23,6 @@ rules =
   validators:
     title: Validators.required()
     description: Validators.required()
-
 Squares.allow
   insert: rules.adminOnly
   update: rules.adminOnly
@@ -44,7 +40,6 @@ Squares.allow
       default: false
   validators:
     name: Validators.required()
-
 Rounds.allow
   update: rules.adminOnly
 
@@ -74,3 +69,6 @@ Rounds.allow
         _id:
           $in:
             this.square_ids
+Cards.allow
+  update: (user_id, doc)->
+    doc.owner_id == user_id

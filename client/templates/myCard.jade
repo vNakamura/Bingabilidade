@@ -1,15 +1,40 @@
-template(name="myCard")
-  table.my-card
+template(name="cardTable")
+  table.my-card(class=tableClass)
     tr
       th b
       th i
       th l
       th i
       th d
-    each myCard.rows
+    each cardSquaresTable card.square_ids
       tr
         each this
-          td(class=numberClass)
-            each number number_id
+          td(class=squareClass)
+            with square _id
               .title {{title}}
-              .description {{description}}
+              .description {{description}}  
+
+template(name='cardView')
+  +cardTable card=currentCard
+
+template(name="myCard")
+  unless currentCardIsOk
+    .vertical.layout.center-justified
+      p Você ainda não possui uma cartela para a rodada atual:
+        strong= currentRound.name
+      if currentUser
+        paper-button.generateCard(raised)
+          | Criar nova cartela
+      else
+        paper-button.generateCard(raised)
+          | Criar cartela anônima
+        p Cartelas anônimas não podem ser compartilhadas. Faça
+          a(href="/sign-in") login
+          | para poder compartilhar sua cartela e aparecer na lista de participantes.
+  if currentCard
+    if currentCardIsOk
+      p Cartela válida para:
+      h2= currentRound.name
+    else
+      p Você ainda pode visualizar sua última cartela, mas ela não tem valor para esta rodada
+    +cardTable tableClass="clickable" card=currentCard

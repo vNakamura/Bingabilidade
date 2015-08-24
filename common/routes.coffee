@@ -34,21 +34,34 @@ Router.route '/',
   headerTitle: 'Minha Cartela'
   template: "Home"
   subscriptions: ->
-    [
-      Meteor.subscribe 'columns'
-      Meteor.subscribe 'numbers'
+    subs = [
+      Meteor.subscribe 'squares'
+      Meteor.subscribe 'currentRound'
     ]
+    if Meteor.userId()
+      subs.push Meteor.subscribe('myLastCard')
+    else
+      subs.push Meteor.subscribe('myLastCard', Session.get 'currentAnonymousCard')
+    return subs
   onAfterAction: ->
-    unless Session.get 'myCard'
-      Meteor.call 'generateCard', (err, data)->
-        if err
-          console.log err
-        else
-          Session.setPersistent 'myCard', data
+    if Session.get 'myCard'
+      Session.clear 'myCard'
+
+Router.route '/!:_id',
+  name: 'card'
+  headerTitle: 'Visualizar Cartela'
+  headerTitle: 'Visualizar Cartela'
+  template: 'cardView'
+  subscriptions: ->
+    [
+      Meteor.subscribe 'squares'
+      Meteor.subscribe 'card', @params._id
+    ]
 
 Router.route '/sign-in',
   name: 'signIn'
   headerTitle: 'Não logado'
+  subTitle: 'Entrar'
   template: "signIn"
 
 Router.route '/admin',
@@ -101,4 +114,4 @@ Router.route "/sign-out",
 
 
 Router.plugin 'ensureSignedIn',
-    except: ['home', 'signIn', 'wtf', 'squares', 'setup']
+    except: ['home', 'card', 'signIn', 'wtf', 'squares', 'setup']

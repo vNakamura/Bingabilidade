@@ -15,10 +15,7 @@ table.my-card
     padding: common-spacing (common-spacing / 2)
     vertical-align top
     text-align center
-    &.checkable
-      cursor pointer
-    &.checked, &.centerSquare
-      color body-background
+    &.centerSquare
       background-color text-color
     +below(2)
       vertical-align middle
@@ -36,3 +33,10 @@ table.my-card
     font-size: .7rem
     +below(2)
       display: none
+
+table.clickable
+  td.checkable
+    cursor pointer
+  td.checked
+    color body-background
+    background-color text-color
