@@ -11,8 +11,13 @@ template(name="playing")
                 .square.checked
               else
                 .square
-          +avatar(user=owner shape="circle")
-          .name.flex
-            = owner.profile.name
+          +avatarAndName(_id=owner_id)
+          
   else
     +noRound
+
+template(name="avatarAndName")
+  +with getUser _id
+    +avatar(user=this shape="circle")
+    .name
+      = profile.name

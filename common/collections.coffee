@@ -10,7 +10,6 @@ rules =
   transform: false
   fields:
     profile: 'object'
-    roles: 'array'
 
 @Squares = new Mongo.Collection "squares"
 @Square = Astro.Class
@@ -63,12 +62,6 @@ Rounds.allow
       class: 'Round'
       local: 'round_id'
       foreign: '_id'
-  methods:
-    squares: ->
-      Squares.find
-        _id:
-          $in:
-            this.square_ids
 Cards.allow
   update: (user_id, doc)->
     doc.owner_id == user_id

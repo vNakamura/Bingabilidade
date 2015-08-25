@@ -6,7 +6,7 @@ mini-card-border = 1px solid #777
   cf()
   paper-button
     col(1/3, cycle: 3)
-    text-align center
+    text-align center !important
     .mini-card
       margin 4px
       width 50px
@@ -24,3 +24,7 @@ mini-card-border = 1px solid #777
         background-color text-color
     .name
       ellipsis()
+    +below(3)
+      col(1/2, cycle: 2)
+    +mobile()
+      stack()
