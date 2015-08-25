@@ -11,6 +11,9 @@ template(name="mainMenu")
     paper-button(data-action="home" active="{{isActiveRoute 'home'}}")
       i.fa.fa-table
       | Minha Cartela
+    paper-button(data-action="playing" active="{{isActiveRoute 'playing'}}")
+      i.fa.fa-users
+      | Participantes
     paper-button(data-action="squares" active="{{isActiveRoute 'squares'}}")
         i.fa.fa-th-large
         | Quadrados
@@ -25,9 +28,6 @@ template(name="mainMenu")
         paper-button(data-action="rounds" active="{{isActiveRoute 'admin-rounds'}}")
           i.fa.fa-trophy
           | Rodadas
-        paper-button(data-action="users" active="{{isActiveRoute 'admin-users'}}" disabled)
-          i.fa.fa-users
-          | Usuários
     +if currentUser
       paper-button(data-action="me" active="{{isActiveRoute 'me'}}")
         i.fa.fa-cog

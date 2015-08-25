@@ -58,6 +58,16 @@ Router.route '/!:_id',
       Meteor.subscribe 'card', @params._id
     ]
 
+Router.route '/playing',
+  name: 'playing'
+  headerTitle: 'Quem é que tá jogando?'
+  subTitle: "Participantes"
+  template: 'playing'
+  subscriptions: ->
+    [
+      Meteor.subscribe 'playing'
+    ]
+
 Router.route '/sign-in',
   name: 'signIn'
   headerTitle: 'Não logado'
@@ -114,4 +124,4 @@ Router.route "/sign-out",
 
 
 Router.plugin 'ensureSignedIn',
-    except: ['home', 'card', 'signIn', 'wtf', 'squares', 'setup']
+    except: ['home', 'playing', 'card', 'signIn', 'wtf', 'squares', 'setup']

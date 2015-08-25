@@ -1,0 +1,26 @@
+@import '../_variables'
+
+mini-card-border = 1px solid #777
+
+.players
+  cf()
+  paper-button
+    col(1/3, cycle: 3)
+    text-align center
+    .mini-card
+      margin 4px
+      width 50px
+      border-left: card-border
+      border-top: card-border
+      display inline-block
+      cf()
+      .square
+        width 9px
+        height 9px
+        border-right: card-border
+        border-bottom: card-border
+        float left
+      .checked
+        background-color text-color
+    .name
+      ellipsis()

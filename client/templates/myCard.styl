@@ -4,7 +4,7 @@ table.my-card
   width: 100%
   border-collapse: collapse
   th, td
-    border: solid 1px lighten(text-color, 75%)
+    border: card-border
     width 20%
   th
     font-size: 2rem
@@ -15,7 +15,8 @@ table.my-card
     padding: common-spacing (common-spacing / 2)
     vertical-align top
     text-align center
-    &.centerSquare
+    &.centerSquare, &.checked
+      color body-background
       background-color text-color
     +below(2)
       vertical-align middle
@@ -37,6 +38,3 @@ table.my-card
 table.clickable
   td.checkable
     cursor pointer
-  td.checked
-    color body-background
-    background-color text-color

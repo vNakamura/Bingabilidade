@@ -3,17 +3,7 @@ Meteor.publish null, ->
   GlobalSettings.find()
 
 
-
 # Page Specific Subscriptions
-Meteor.publish 'onlineUsers', ->
-  Meteor.users.find
-    "status.online":true
-  ,
-    fields:
-      profile: 1
-      "services.google.picture": 1
-      "services.twitch.logo": 1
-
 Meteor.publish 'currentRound', ->
   Rounds.find
     finished: no
@@ -22,23 +12,40 @@ Meteor.publish 'currentRound', ->
       createdAt: -1
     limit: 1
 
-Meteor.publish 'myLastCard', (anonCard)->
-  if @userId
-    return Cards.find
-      owner_id: @userId
-    ,
-      sort:
-        createdAt: -1
-      limit: 1
-  else if anonCard
-    return Cards.find
-      _id: anonCard
-    ,
-      sort:
-        createdAt: -1
-      limit: 1
-  else
-    return null
+Meteor.publishComposite 'myLastCard', (anonCard)->
+  {
+    find: ->
+      if @userId
+        return Cards.find
+          owner_id: @userId
+        ,
+          sort:
+            createdAt: -1
+          limit: 1
+      else if anonCard
+        return Cards.find
+          _id: anonCard
+        ,
+          sort:
+            createdAt: -1
+          limit: 1
+      else
+        return null
+    children: [
+      find: (card)->
+        Meteor.users.find
+          _id: card.owner_id
+        ,
+          fields:
+            profile: 1
+            "services.google.picture": 1
+            "services.twitch.logo": 1
+      find: (card)->
+        Rounds.find
+          _id: card.round_id
+    ]
+  }
+
 
 
 Meteor.publishComposite 'card', (card_id)->
@@ -57,6 +64,33 @@ Meteor.publishComposite 'card', (card_id)->
     ]
   }
 
+Meteor.publishComposite 'playing', ->
+  {
+    find: ->
+      Rounds.find
+        finished: no
+      ,
+        sort:
+          createdAt: -1
+        limit: 1
+    children: [
+      find: (round)->
+        Cards.find
+          round_id: round._id
+          owner_id:
+            $ne: null
+      children: [
+        find: (card)->
+          Meteor.users.find
+            _id: card.owner_id
+          ,
+            fields:
+              profile: 1
+              "services.google.picture": 1
+              "services.twitch.logo": 1
+      ]
+    ]
+  }
 
 
 # Admin Subscriptions

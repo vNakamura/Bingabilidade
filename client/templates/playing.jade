@@ -1,0 +1,18 @@
+template(name="playing")
+  if currentRound
+    p Participantes da rodada:
+    h2= currentRound.name
+    .players
+      each roundCards
+        paper-button(raised)
+          .mini-card
+            each square_ids
+              if checked
+                .square.checked
+              else
+                .square
+          +avatar(user=owner shape="circle")
+          .name.flex
+            = owner.profile.name
+  else
+    +noRound
