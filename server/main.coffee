@@ -40,6 +40,7 @@ Meteor.publishComposite 'myLastCard', (anonCard)->
             profile: 1
             "services.google.picture": 1
             "services.twitch.logo": 1
+    ,
       find: (card)->
         Rounds.find
           _id: card.round_id
@@ -67,6 +68,7 @@ Meteor.publishComposite 'card', (card_id)->
             "services.google.picture": 1
             "services.twitch.logo": 1
           limit: 1
+    ,
       find: (card)->
         Rounds.find
           _id: card.round_id
