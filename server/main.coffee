@@ -56,8 +56,6 @@ Meteor.publishComposite 'card', (card_id)->
     find: ->
       Cards.find
         _id: card_id
-        owner_id:
-          $ne: null
       ,
         limit: 1
     children: [
