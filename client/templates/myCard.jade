@@ -15,11 +15,15 @@ template(name="cardTable")
               .description {{description}}  
 
 template(name='cardView')
-  p Cartela de:
-    strong= currentCard.owner.profile.name
-  p Rodada: 
-    strong= currentCard.round.name
-  +cardTable card=currentCard
+  if currentCard
+    p Cartela de:
+      +with getUser currentCard.owner_id
+        strong= profile.name
+    p Rodada: 
+      strong= currentCard.round.name
+    +cardTable card=currentCard
+  else
+    p Cartela não encontrada
 
 template(name="myCard")
   if currentRound
@@ -41,8 +45,8 @@ template(name="myCard")
     
   if currentCard
     if currentCardIsOk
-      p Cartela válida para:
-      h2= currentRound.name
+      p Rodada:
+        strong= currentRound.name
     else
       p Você ainda pode visualizar sua última cartela, mas ela não tem valor para esta rodada
     +cardTable tableClass="clickable" card=currentCard

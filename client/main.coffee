@@ -21,9 +21,9 @@ Template.defaultLayout.events
   "click [data-action=home]": ()->
     Router.go '/'
 
-Template.userList.helpers
-  onlineUsers: () ->
-    Meteor.users.find()
+Template.registerHelper 'getUser', (_id)->
+  Meteor.users.findOne
+    _id: _id
 
 @showToast = (message, duration=3000)->
   t = $('#toast').get(0)

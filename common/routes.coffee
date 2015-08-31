@@ -47,7 +47,7 @@ Router.route '/',
     if Session.get 'myCard'
       Session.clear 'myCard'
 
-Router.route '/!:_id',
+Router.route '/card/:_id',
   name: 'card'
   headerTitle: 'Visualizar Cartela'
   headerTitle: 'Visualizar Cartela'
@@ -60,7 +60,7 @@ Router.route '/!:_id',
 
 Router.route '/playing',
   name: 'playing'
-  headerTitle: 'Quem é que tá jogando?'
+  headerTitle: 'Quem tá jogando?'
   subTitle: "Participantes"
   template: 'playing'
   subscriptions: ->

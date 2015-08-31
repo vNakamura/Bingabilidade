@@ -1,6 +1,6 @@
 Template.Squares.helpers
   'squares': ->
-    Squares.find {removed:no}, {sort:{createdAt:-1}}
+    Squares.find {removed:no}, {sort:{createdAt:1}}
 
 Template.Squares.events
   'click .edit-btn': ()->
@@ -19,7 +19,11 @@ Template.SquareEdit.helpers
     Session.get 'currentSquare'
 
 Template.SquareEdit.events
-  'click paper-button[dialog-confirm]': ()->
+  'keyup paper-input': ->
+    if event.type is 'keyup' and event.keyCode isnt 13 # Enter Key
+      return
+    $('paper-button[dialog-confirm]').click()
+  'click paper-button[dialog-confirm]': ->
     isNew = @._isNew
     @.title = $('#square-edit-title').val()
     @.description = $('#square-edit-description').val()

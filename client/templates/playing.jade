@@ -11,13 +11,22 @@ template(name="playing")
                 .square.checked
               else
                 .square
-          +avatarAndName(user=owner)
+          if owner_id
+            +with getUser owner_id
+              +avatarAndName(user=this)
+          else
+            +avatarAndName
           
   else
     +noRound
 
 template(name="avatarAndName")
-  +with user
-    +avatar(user=this shape="circle")
-    .name
-      = profile.name
+  if user
+    +with user
+      +avatar(user=this shape="circle")
+      .name
+        = profile.name
+  else
+    .avatar.avatar-circle
+      img.avatar-image(src="/img/no-pic.jpg")
+    .name Anônimo

@@ -56,6 +56,8 @@ Meteor.publishComposite 'card', (card_id)->
     find: ->
       Cards.find
         _id: card_id
+        owner_id:
+          $ne: null
       ,
         limit: 1
     children: [
@@ -90,8 +92,6 @@ Meteor.publishComposite 'playing', ->
       find: (round)->
         Cards.find
           round_id: round._id
-          owner_id:
-            $ne: null
       children: [
         find: (card)->
           Meteor.users.find
